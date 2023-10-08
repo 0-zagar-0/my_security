@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +16,7 @@ public class HelloController {
     }
 
     @GetMapping("/hi")
-    public String sayHi() {
+    public String sayHi(Authentication authentication) {
         return "Hi all ... ";
     }
 }
